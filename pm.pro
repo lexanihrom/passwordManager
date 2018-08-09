@@ -47,4 +47,7 @@ HEADERS += \
     Fingerprint.hpp
 
 OTHER_FILES += \
-    android/src/com/Fingerprint.java
+    android/src/com/CryptoUtils.java \
+    android/src/com/FingerprintUtils.java \
+    android/src/com/LoginActivity.java \
+    android/src/com/MainActivity.java
