@@ -1,4 +1,4 @@
-QT += quick
+QT += quick androidextras
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -13,8 +13,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp \
-    fingerprint.cpp
+    main.cpp \
+    Fingerprint.cpp \
+
 
 RESOURCES += qml.qrc
 
@@ -29,5 +30,21 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+
 DISTFILES += \
-    src/poc/intent/FingerprintHandler.java
+    android/AndroidManifest.xml \
+    android/gradle/wrapper/gradle-wrapper.jar \
+    android/gradlew \
+    android/res/values/libs.xml \
+    android/gradle/wrapper/gradle-wrapper.properties \
+    android/build.gradle \
+    android/gradlew.bat \
+    android/gradle.properties \
+    android/local.properties
+
+HEADERS += \
+    Fingerprint.hpp
+
+OTHER_FILES += \
+    android/src/com/Fingerprint.java
