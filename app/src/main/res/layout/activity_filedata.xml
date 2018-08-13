@@ -9,12 +9,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.fingerprintsample.MainActivity">
+    tools:context="com.manager.MainActivity">
 
     <EditText
         android:id="@+id/file"
-        android:layout_width="347dp"
-        android:layout_height="391dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:ems="10"
@@ -27,6 +27,7 @@
         android:layout_height="68dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Save" />
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite" />
 
 </RelativeLayout>

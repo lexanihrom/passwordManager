@@ -1,10 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+    }
     compileSdkVersion 23
     buildToolsVersion '27.0.3'
     defaultConfig {
-        applicationId "com.example.fingerprintsample"
+        applicationId "com.manager"
         minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
@@ -20,12 +22,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:23.0.1'
-    testImplementation 'junit:junit:4.12'
 }
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.

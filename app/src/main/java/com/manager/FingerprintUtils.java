@@ -1,4 +1,4 @@
-package com.example.fingerprintsample;
+package com.manager;
 
 import android.annotation.TargetApi;
 import android.app.KeyguardManager;
@@ -6,10 +6,6 @@ import android.content.Context;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
-
-/**
- * Created by azret.magometov on 19-Dec-16.
- */
 
 public final class FingerprintUtils {
     private FingerprintUtils() {

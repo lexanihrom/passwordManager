@@ -1,4 +1,4 @@
-package com.example.fingerprintsample;
+package com.manager;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -34,9 +34,6 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.OAEPParameterSpec;
 import javax.crypto.spec.PSource;
 
-/**
- * Created by azret.magometov on 08-Nov-16.
- */
 @TargetApi(Build.VERSION_CODES.M)
 public final class CryptoUtils {
     private static final String TAG = CryptoUtils.class.getSimpleName();
@@ -161,7 +158,7 @@ public final class CryptoUtils {
                     initDecodeCipher(mode);
                     break;
                 default:
-                    return false; //this cipher is only for encode\decode
+                    return false;
             }
             return true;
 
@@ -182,11 +179,7 @@ public final class CryptoUtils {
 
     private static void initEncodeCipher(int mode) throws KeyStoreException, InvalidKeySpecException, NoSuchAlgorithmException, InvalidKeyException, InvalidAlgorithmParameterException {
         PublicKey key = sKeyStore.getCertificate(KEY_ALIAS).getPublicKey();
-
-        // workaround for using public key
-        // from https://developer.android.com/reference/android/security/keystore/KeyGenParameterSpec.html
         PublicKey unrestricted = KeyFactory.getInstance(key.getAlgorithm()).generatePublic(new X509EncodedKeySpec(key.getEncoded()));
-        // from https://code.google.com/p/android/issues/detail?id=197719
         OAEPParameterSpec spec = new OAEPParameterSpec("SHA-256", "MGF1", MGF1ParameterSpec.SHA1, PSource.PSpecified.DEFAULT);
 
         sCipher.init(mode, unrestricted, spec);

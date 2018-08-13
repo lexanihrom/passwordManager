@@ -9,24 +9,28 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.fingerprintsample.MainActivity">
+    tools:context="com.manager.MainActivity">
 
     <Button
         android:id="@+id/buttonCreate"
         android:layout_width="229dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="148dp"
-        android:text="Create password" />
+        android:layout_marginTop="106dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Create password"
+        android:textColor="@color/colorWhite" />
 
     <Button
         android:id="@+id/buttonOpenFile"
         android:layout_width="229dp"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="109dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
         android:text="Open file" />
 
 </RelativeLayout>
